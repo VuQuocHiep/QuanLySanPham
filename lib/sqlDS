@@ -1,0 +1,6 @@
+CREATE TABLE DanhSachMuaHang (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    KhachHangID INT FOREIGN KEY REFERENCES KhachHang(ID),
+    MatHangID INT FOREIGN KEY REFERENCES MatHang(ID),
+    SoLuong INT CHECK (SoLuong > 0)
+);
