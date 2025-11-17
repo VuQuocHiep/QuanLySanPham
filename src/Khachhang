@@ -41,7 +41,10 @@ public class Khachhang extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin!");
             return;
         }
-
+        if (!sdt.matches("0\\d{9}")) {
+            JOptionPane.showMessageDialog(this, "SĐT không hợp lệ! Phải có 10 chữ số và bắt đầu bằng số 0.");
+            return;
+        }
         String maKH = jTextField1.getText();
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
